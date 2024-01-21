@@ -19,7 +19,7 @@ $(OUTPUT): $(SOURCES)
 	@pdflatex -jobname=$(NAME) main.tex >/dev/null
 	@pdflatex -jobname=$(NAME) main.tex >/dev/null
 	@echo "Done building"
-	#
+	
 # Zip target
 zip: $(NAME).zip
 
@@ -30,4 +30,4 @@ $(NAME).zip: $(wildcard *)
 # Clean rule
 clean:
 	@echo "Cleaning directory of unnecessary files"
-	rm -rf $$(tr '\n' ' ' < .gitignore)
+	trash -f $$(tr '\n' ' ' < .gitignore)
