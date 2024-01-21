@@ -19,5 +19,5 @@ $(OUTPUT): $(SOURCES)
 
 # Clean rule
 clean:
-	@echo "Cleaning directory of unnecesary files"
-	rm -f *.aux *.bbl *.blg *.log *.fls *.fdb_latexmk *.toc *.lof *.lot *.out main.synctex.gz
+	@echo "Cleaning directory of unnecessary files"
+	rm -rf $$(tr '\n' ' ' < .gitignore)

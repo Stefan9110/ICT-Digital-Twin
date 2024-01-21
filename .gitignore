@@ -9,3 +9,6 @@
 *.lot
 *.out
 main.synctex.gz
+main.pdf
+.idea
+out
