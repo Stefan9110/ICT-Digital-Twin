@@ -5,6 +5,9 @@ NAME = ICT-Digital-Twin
 # Main target file
 OUTPUT = $(NAME).pdf
 
+.PHONY: zip
+
+
 # Default rule
 all: $(OUTPUT)
 
@@ -16,6 +19,13 @@ $(OUTPUT): $(SOURCES)
 	@pdflatex -jobname=$(NAME) main.tex >/dev/null
 	@pdflatex -jobname=$(NAME) main.tex >/dev/null
 	@echo "Done building"
+	#
+# Zip target
+zip: $(NAME).zip
+
+$(NAME).zip: $(wildcard *)
+	@echo "Creating zip file..."
+	@zip -r $(NAME).zip $(wildcard *) -x "*.git*"
 
 # Clean rule
 clean:
