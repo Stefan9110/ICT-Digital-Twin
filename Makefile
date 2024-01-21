@@ -10,12 +10,14 @@ all: $(OUTPUT)
 
 # Rule to build the PDF
 $(OUTPUT): $(SOURCES)
+	@echo "Building PDF..."
 	@pdflatex -jobname=$(NAME) main.tex >/dev/null
 	@bibtex $(NAME) >/dev/null
 	@pdflatex -jobname=$(NAME) main.tex >/dev/null
 	@pdflatex -jobname=$(NAME) main.tex >/dev/null
+	@echo "Done building"
 
 # Clean rule
 clean:
+	@echo "Cleaning directory of unnecesary files"
 	rm -f *.aux *.bbl *.blg *.log *.fls *.fdb_latexmk *.toc *.lof *.lot *.out main.synctex.gz
-
