@@ -1,23 +1,14 @@
-\section{PROBLEM STATEMENT}
-% Use much more general terms 
-% Present the same problem, but emphasizing the lack of available resources
+\section{Problem} \label{sec:problem}
 
-Currently, operating simulation software demands a high degree of technical expertise.
-An entity willing to use such software at an advanced level would require (some \ldots describe) technical knowledge.
+% 3 problems:
+% 1. Lack of adaptability of current datacenter simulation tools
+% 2. Need for a reliable and user-friendly datacenter simulation tool
+% 3. Need for a large-scale service aimed for expert datacenter operators
 
-\subsection{Describing in very technical, specific terms}
-
-\begin{enumerate}
-    \item Basic understanding of \textit{Maven} artifacts and the ability to use a \textit{Gradle} wrapper to compile and publish the OpenDC code base as a local repository, ready to be used as an API.
-    \item Ability to read Kotlin source code and a good understanding of the OpenDC code base, in order to create a meaningful simulation.
-    \item Ability to write Kotlin or Java code, compile it, and understand possible error messages.
-    \item Basic understanding of the Java Virtual Machine (JVM) and how it runs locally.
-\end{enumerate}
-
-\subsection{Describing in more general terms}
-
-\begin{enumerate}
-    \item Familiarity with software development principles and practices.
-    \item Understanding of how to use and interact with APIs.
-    \item Knowledge of how to troubleshoot and debug code.
-\end{enumerate}
+In this report, we identify and aim to address three main problems in the field of datacenter simulation.
+Firstly, most datacenter architects do not currently adapt simulation tools in their practice.
+Thus, we identify \textbf{a lack of adaptability of simulation tools} in the field of datacenter design.
+Secondly, currently available datacenter simulation tools are still under development or have not reached a maturity level to enable them to be used \textit{as a service}.
+We observe \textbf{the need for a reliable and accessible datacenter simulation service} that can be used by non-experts in the field of datacenter design and operation.
+Finally, operating a simulation service should be scalable for larger datacenter operators and novice users alike.
+Therefore, we identify \textbf{the need for a scalable service}, that can handle both complex operations at a reasonable cost and deliver fast and reliable results.

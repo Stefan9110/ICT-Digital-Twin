@@ -1,9 +1,24 @@
 \usepackage{graphicx}
 \usepackage{url}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{eurosym}
+\usepackage{parskip}
+\usepackage{float}
+\usepackage{tabularx}
 
-\textwidth 15cm
-\textheight 22cm
-\parindent 10pt
-\oddsidemargin 0.5cm
-\evensidemargin 0.5cm
-\topmargin -1cm
+% space between paragraphs
+\setlength{\parskip}{1em}
+
+\geometry
+{
+    top=2.20cm,
+    bottom=3.20cm,
+    left=2.5cm,
+    right=2.5cm
+}
+
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{\MakeUppercase}
+
+

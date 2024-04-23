@@ -1,33 +1,36 @@
-# List of all .tex source files
-SOURCES = $(wildcard *.tex) $(wildcard content/*) $(wildcard style/*)
+SOURCES = $(wildcard *.tex) $(wildcard content/*) $(wildcard style/*) $(wildcard preface/*) $(wildcard images/*)
 NAME = ICT-Digital-Twin
+OUTPUT= $(NAME).pdf
+.PHONY: pdf final clean sign verify
 
-# Main target file
-OUTPUT = $(NAME).pdf
+# ========================================
+# MAIN EXECUTABLE MAKE RULES
+# CLICK ON THE GREEN BUTTON TO RUN
+# AND ADD TO YOUR CLION CONFIGURATION
+# ========================================
 
-.PHONY: zip
+# Compile current version of the document
+pdf: build/$(OUTPUT)
 
+# Make final PDF version of the document
+final: final/$(OUTPUT)
 
-# Default rule
-all: $(OUTPUT)
-
-# Rule to build the PDF
-$(OUTPUT): $(SOURCES)
-	@echo "Building PDF..."
-	@pdflatex -jobname=$(NAME) main.tex >/dev/null
-	@bibtex $(NAME) >/dev/null
-	@pdflatex -jobname=$(NAME) main.tex >/dev/null
-	@pdflatex -jobname=$(NAME) main.tex >/dev/null
-	@echo "Done building"
-	
-# Zip target
-zip: $(NAME).zip
-
-$(NAME).zip: $(wildcard *)
-	@echo "Creating zip file..."
-	@zip -r $(NAME).zip $(wildcard *) -x "*.git*"
-
-# Clean rule
+# Clean the build directory
 clean:
 	@echo "Cleaning directory of unnecessary files"
-	trash -f $$(tr '\n' ' ' < .gitignore)
+	rm -rf $$(tr '\n' ' ' < .gitignore)
+
+# ========================================
+# IGNORE EVERYTHING BELOW THIS LINE
+# ========================================
+
+build/$(OUTPUT): $(SOURCES)
+	@echo "Building PDF..."
+	@./scripts/build.sh $(NAME)
+	@echo "Done building PDF."
+
+final/$(OUTPUT): $(SOURCES)
+	@echo "Creating final version of the PDF..."
+	@./scripts/build.sh $(NAME) "final"
+	@rm -rf final/$(NAME).aux final/$(NAME).log final/$(NAME).out final/$(NAME).toc final/main.bib final/$(NAME).bbl final/$(NAME).blg
+	@echo "Done creating final version of the PDF."
