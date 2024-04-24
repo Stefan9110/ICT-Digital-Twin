@@ -2,28 +2,15 @@
 
 By evaluating the problem we conclude that it can be separated into three main research questions.
 
-\begin{table}[H]
+\begin{tabularx}{\textwidth}{lX}
+    \input{content/research-questions/question-1}
+    \input{content/research-questions/question-2}
+    \input{content/research-questions/question-3}
+\end{tabularx}
+
+\begin{figure}[H]
     \centering
-    \begin{tabularx}{\textwidth}{lX}
-        \textbf{RQ1} & \textbf{How to offer a datacenter simulation tool as \textit{Software as a Service}, as well as \textit{Platform as a Service}?} \\
-        & There is a current lack of adaptability of datacenter simulation tools, mainly due to problems related to accessibility, reliability and scalability.
-        The aim of this research question is to determine the functional and non-functional requirements of a datacenter simulation service.
-        The trade-off between usability and functionality must be carefully analyzed to ensure a reliable and accessible service.
-        We also aim to identify the best practices for offering such a service, as well as the potential challenges that may arise.
-        \\\\
-
-        \textbf{RQ2} & \textbf{How to design the backend for a datacenter simulation service and under what policies?} \\
-        & In order for a reliable and scalable simulation tool to function properly, a solid foundation must be established.
-        We aim to determine the parameters that quantify the performance of the backend of a datacenter simulation service.
-        Through these parameters, we can determine which policies are best suited for the backend of the tool.
-        \\\\
-
-        \textbf{RQ3} & \textbf{How to evaluate experimentally, through a prototype, that the design of this system actually meets the goals?} \\
-        & In order for any system to be deemed successful and complete, it must be first be evaluated by experts in its related field.
-        We aim to deliver a prototype of the datacenter simulation service and evaluate it through a series of experiments.
-        The purpose of this research question is to determine the best way to evaluate the system, to ensure that it meets the goals of its stakeholders, on both a functional and non-functional level.
-        Furthermore, the system must deliver reliable results to both small and large-scale datacenter operators.
-        \\\\
-    \end{tabularx}
-    \label{tab:research-questions}
-\end{table}
+    \includegraphics[width=0.6\textwidth]{images/system-diagram}
+    \caption{System diagram}
+    \label{fig:system-diagram}
+\end{figure}
